@@ -2,11 +2,10 @@ package br.gov.sp.fatec.domain.entity;
 
 import br.gov.sp.fatec.domain.enums.AluguelStatus;
 import jakarta.persistence.*;
+import java.util.Date;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-
-import java.util.Date;
 
 @Entity
 @Getter
@@ -27,9 +26,9 @@ public class Aluguel {
     @Enumerated(value = EnumType.STRING)
     private AluguelStatus status;
 
-    @OneToOne
+    @ManyToOne
     private Carro carro;
 
-    @OneToOne
+    @ManyToOne
     private Cliente cliente;
 }

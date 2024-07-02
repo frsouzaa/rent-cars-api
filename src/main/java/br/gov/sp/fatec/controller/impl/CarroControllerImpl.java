@@ -19,7 +19,6 @@ public class CarroControllerImpl implements CarroController {
     @Override
     public ResponseEntity<CarroResponse> save(CarroRequest carro) {
         return ResponseEntity.ok(carroService.save(carro));
-
     }
 
     @Override
