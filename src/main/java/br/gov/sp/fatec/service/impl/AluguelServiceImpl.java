@@ -58,6 +58,7 @@ public class AluguelServiceImpl implements AluguelService {
 
     @Override
     public void deleteById(Long id) {
+        aluguelRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Aluguel não encontrado"));
         aluguelRepository.deleteById(id);
     }
 }

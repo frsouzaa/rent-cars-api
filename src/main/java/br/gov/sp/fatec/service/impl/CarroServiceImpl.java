@@ -49,6 +49,7 @@ public class CarroServiceImpl implements CarroService {
 
     @Override
     public void deleteById(Long id) {
+        carroRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Carro não encontrado"));
         carroRepository.deleteById(id);
     }
 }
